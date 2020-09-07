@@ -150,7 +150,8 @@ public class SubmitProjectActivity extends AppCompatActivity {
                         final AlertDialog alertDialog = builder.create();
                         alertDialog.show();
                     }
-                }, new Response.ErrorListener() {
+                },
+                new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("Error", "==" + error);
@@ -169,7 +170,8 @@ public class SubmitProjectActivity extends AppCompatActivity {
                 final AlertDialog alertDialog = builder.create();
                 alertDialog.show();
             }
-        }) {
+        })
+        {
             @Override
             protected Response<String> parseNetworkResponse(NetworkResponse response) {
                 int mStatusCode = response.statusCode;

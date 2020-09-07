@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class LearningLeadersFragment extends Fragment {
-    private static final String learningLeadersUrl = "https://gadsapi.herokuapp.com/api/hours";
+    private static final String LEARNING_LEADERS_URL = "https://gadsapi.herokuapp.com/api/hours";
     private List<LearningLeadersModel> learningLeadersModelList;
     private RecyclerView recyclerView;
 
@@ -46,14 +46,14 @@ public class LearningLeadersFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.learning_leader_recycler);
         learningLeadersModelList = new ArrayList<>();
 
-        loadLearningLeaders();
+        getLearningLeaders();
 
         return rootView;
     }
 
-    private void loadLearningLeaders() {
+    private void getLearningLeaders() {
 
-        JsonArrayRequest request = new JsonArrayRequest(learningLeadersUrl, new Response.Listener<JSONArray>() {
+        JsonArrayRequest request = new JsonArrayRequest(LEARNING_LEADERS_URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 JSONObject jsonObject;

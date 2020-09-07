@@ -11,18 +11,15 @@ import androidx.appcompat.widget.AppCompatImageView;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    Animation logoAnimation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        logoAnimation = AnimationUtils.loadAnimation(this, R.anim.from_bottom);
 
         AppCompatImageView gadsLogo = findViewById(R.id.gads_logo);
-
-        gadsLogo.setAnimation(logoAnimation);
         startNext();
     }
 

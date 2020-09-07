@@ -42,14 +42,14 @@ public class SkillIQLeadersFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.skill_iq_recycler);
         skillIQModelList = new ArrayList<>();
 
-        loadSkillIQLeaders();
+        getSkillIqLeaders();
 
         return rootView;
     }
 
-    private void loadSkillIQLeaders() {
-        String skillIQLeadersUrl = "https://gadsapi.herokuapp.com/api/skilliq";
-        JsonArrayRequest request = new JsonArrayRequest(skillIQLeadersUrl, new Response.Listener<JSONArray>() {
+    private void getSkillIqLeaders() {
+        final String SKILL_IQ_LEADERS_URL = "https://gadsapi.herokuapp.com/api/skilliq";
+        JsonArrayRequest request = new JsonArrayRequest(SKILL_IQ_LEADERS_URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 JSONObject jsonObject;
