@@ -63,7 +63,6 @@ public class SkillIQLeadersFragment extends Fragment {
                         model.setScore(jsonObject.getInt("score"));
                         model.setBadgeUrl(jsonObject.getString("badgeUrl"));
                         skillIQModelList.add(model);
-
                         setupRecyclerView(skillIQModelList);
 
                     } catch (JSONException e) {
